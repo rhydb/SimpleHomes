@@ -6,6 +6,7 @@ The following permissions can be applied to players:
 * homes.skipwait - Skip the countdown when teleporting to a home
 * homes.bypasscap - Bypass the maximum home count
 * homes.admin - Able to view, visit, set or delete homes of other players
+
 Config file:
 ```
 # do-teleport-wait : If enabled, there will be a countdown before telporting the player
