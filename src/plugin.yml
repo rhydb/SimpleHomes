@@ -1,0 +1,22 @@
+name: SimpleHomes
+version: 1.0
+author: nijabutter
+main: nijabutter.SimpleHomes
+description: Simple homes plugin
+
+commands:
+  homes:
+    description: Displays your currently set homes
+    usage: /homes
+    alises: [listhomes, hms]
+  sethome:
+    description: Set a new home at your current location
+    usage: /sethome <name>
+    aliases: [newhome, createhome, makehome, shome, nhome, shm, nhm]
+  delhome:
+    description: Delete a home
+    usage: /delhome <name>
+    aliases: [rmhome, dhome, rhome, deletehome, removehome]
+  home:
+    description: Teleport to a home
+    usage: /home <name>
