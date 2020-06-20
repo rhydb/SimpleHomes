@@ -1,7 +1,7 @@
 # SimpleHomes
 A simple homes plugin for Minecraft
 
-###### Permissions
+### Permissions
 The following permissions can be applied to players:
 * homes.skipwait - Skip the countdown when teleporting to a home
 * homes.bypasscap - Bypass the maximum home count
