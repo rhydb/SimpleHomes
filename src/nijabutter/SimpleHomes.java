@@ -35,7 +35,6 @@ public class SimpleHomes extends JavaPlugin implements Listener{
 		homes = YamlConfiguration.loadConfiguration(new File(this.getDataFolder() + File.separator + "Homes.yml"));
 		getServer().getPluginManager().registerEvents(this, this);
 		System.out.println("\u001B[36m SimpleHomes v1.0: Enabled!");
-		new Join(this);
 		new homes(this);
 		new sethome(this);
 		new delhome(this);
