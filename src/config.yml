@@ -1,16 +1,5 @@
-# SimpleHomes v1.0 Author: nijabutter
-# do-teleport-wait : If enabled, there will be a countdown before telporting the player
-# teleport-wait : The time to wait before teleporting the player
-# admin-bypass-wait : If enabled, those with homes.admin will not have to wait
-# max-home-count : Maximum number of homes each player may have
-# overwrite-homes : When enabled, setting a new home with the same name of an already existing home will overwrite the home's location
-#      disabling this will display a message informing that the home already exists.
-# cancel-on-move : If enabled, the telport will be cancelled if the player moves while waiting
-# chat-color: Color to use when sending messages to player (default: &6)
-# teleport-color: Color to use when sending teleport message to player (default &a)
-# teleport-message : Message to send after teleporting player
-# max-homecount-message : Message to display when user tries to set a new home but they have reached the maximum
-# invalid-perm-message : Message to send when the player does not have the correct permissions
+# SimpleHomes v1.0
+# Author: nijabutter
 
 # Commands:
 # /homes : Displays your current homes
@@ -29,15 +18,38 @@
 # homes.bypasscap : Able to bypass max home count
 # homes.admin : Able to view, visit, set or remove homes of other players
 
+# Enable / disable the teleport countdown
 do-teleport-wait: true
+
+# The countdown before teleportation (in seconds)
 teleport-wait: 5
+
+# Should those with homes.admin teleport instantly
 admin-bypass-wait: true
+
+# Maximum amount of homes
 max-home-count: 5
+
+# Should setting a new home with the same name as an existing home overwrite the old home?
+# If set to false - you will have to delete the old home before setting the new home
 overwrite-homes: false
+
+# Should the countdown be cancelled if you move
 cancel-on-move: true
+
+# The chat colour code to use when sending messages
+# This will be prepended before each message!
 chat-color: "&6"
+
+# The chat colour code to use after successfully teleporting
+# This will be prepended before each message!
 teleport-color: "&a"
+
+# The message to send after successfully teleporting
 teleport-message: "Teleported!"
 
+# Message to show when at maximum home count
 max-homecount-message: "&cYou have reached the maximum amount of homes"
+
+# Message to show when trying to access admin commands without homes.admin
 invalid-perm-message: "&cInvalid permissions"
