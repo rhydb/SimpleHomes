@@ -11,8 +11,8 @@ The following permissions can be applied to players:
 ![sethome](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/sethome.PNG)
 ![delhome](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/delhome.png)
 ![cancelled](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/cancelled.PNG)
-![homes](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/homes.PNG)
-![colors](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/ccolors.PNG)
+![homes](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/homesof.PNG)
+![colors](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/colors.PNG)
 #### Config file:
 ```
 # SimpleHomes v1.0
