@@ -7,7 +7,13 @@ The following permissions can be applied to players:
 * homes.bypasscap - Bypass the maximum home count
 * homes.admin - Able to view, visit, set or delete homes of other players
 
-Config file:
+### Screenshots
+![sethome](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/sethome.PNG)
+![delhome](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/delhome.png)
+![cancelled](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/cancelled.PNG)
+![homes](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/homes.PNG)
+![colors](https://raw.githubusercontent.com/nijabutter/SimpleHomes/master/screenshots/ccolors.PNG)
+#### Config file:
 ```
 # SimpleHomes v1.0
 # Author: nijabutter
