@@ -1,8 +1,26 @@
 name: SimpleHomes
-version: 1.0
+version: 2.2
 author: nijabutter
 main: nijabutter.SimpleHomes
 description: Simple homes plugin
+
+permissions:
+  homes.*:
+    description: SimpleHomes
+    children:
+      homes.skipwait: true
+      homes.bypasscap: true
+      homes.admin: true
+    homes.skipwait:
+      description: Skip the countdown
+      default: op
+    homes.bypasscap:
+      description: Bypass the maximum homes cap
+      default: op
+    homes.admin:
+      description: Manage other player homes
+      default: op
+
 
 commands:
   homes:

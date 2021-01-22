@@ -10,37 +10,44 @@ import nijabutter.Utilities.*;
 
 
 public class homes implements CommandExecutor{
-	private SimpleHomes plugin;
-	public homes(SimpleHomes plugin) {
-		this.plugin = plugin;
-		plugin.getCommand("homes").setExecutor(this);
-	}
-	
-	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (!(sender instanceof Player)) {
-			sender.sendMessage("Only players may use this command!");
-			return true;
-		}
-		String color = plugin.getConfig().getString("chat-color");
-		Player p = (Player) sender;
-		if (args.length == 1) {
-			if (p.hasPermission("homes.admin")) {
-				if (SimpleHomes.Homes().isSet(args[0])) {
-					p.sendMessage(Utils.chat(Utils.getHomes(sender, args[0])));
-					return true;
-				}
-				p.sendMessage(Utils.chat(color + "No homes found or player doesnt exist"));
-				return true;
-			}
-			p.sendMessage(Utils.chat(plugin.getConfig().getString("invalid-perm-message")));
-			return true;
-		}
-		if (SimpleHomes.Homes().isSet(p.getName())) {
-			p.sendMessage(Utils.chat(Utils.getHomes(sender, p.getName())));
-			return true;
-		}
-		p.sendMessage(Utils.chat(color + "No homes found"));
-		return true;
-	}
+    private SimpleHomes plugin;
+    public homes(SimpleHomes plugin) {
+        this.plugin = plugin;
+        plugin.getCommand("homes").setExecutor(this);
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("Only players may use this command!");
+            return true;
+        }
+        String color = plugin.getConfig().getString("chat-color");
+        String homeOwner;
+        if (args.length == 1) {
+            if (sender.hasPermission("homes.admin")) {
+                homeOwner  = args[0];
+            }
+            else {
+                sender.sendMessage(Utils.chat(plugin.getConfig().getString("invalid-perm-message")));
+                return true;
+            }
+        }
+        else {
+            homeOwner = sender.getName();
+        }
+        if (SimpleHomes.Homes().isSet(homeOwner)) {
+            int homeCount = 0;
+            for (String key : SimpleHomes.Homes().getConfigurationSection(homeOwner).getKeys(false)) {
+                sender.sendMessage(Utils.chat(color + key));
+                homeCount++;
+            }
+            int maxHomes = plugin.getConfig().getInt("max-home-count");
+            sender.sendMessage(Utils.chat(color + homeOwner + " has " + Integer.toString(homeCount) + "/" + Integer.toString(maxHomes) + " homes"));
+        }
+        else {
+            sender.sendMessage(Utils.chat(color + "No homes found"));
+        }
+        return true;
+    }
 }
