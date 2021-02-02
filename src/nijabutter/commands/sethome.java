@@ -25,24 +25,29 @@ public class sethome implements CommandExecutor{
 
         Player p = (Player) sender;
         String color = plugin.getConfig().getString("chat-color");
-        String homeOwner;
-        String homeName;
+        String homeOwner = sender.getName();
+        String homeName = args[0];
         // set other player home
-        if (args.length == 2)
+        if (p.hasPermission("homes.admin"))
         {
-            if (p.hasPermission("homes.admin")) {
+            if (args.length == 2) {
                 homeOwner = args[0];
                 homeName = args[1];
             }
-            else {
-                p.sendMessage(Utils.chat(plugin.getConfig().getString("invalid-perm-message")));
-                return true;
-            }
         }
         else {
-            homeOwner = sender.getName();
-            homeName = args[0];
+            // check they are able to set homes in other worlds
+            if (!p.getLocation().getWorld().equals(plugin.getServer().getWorlds().get(0))) {
+                // not in main world
+                if (!plugin.getConfig().getBoolean("multi-world")) {
+                    // multi-world disabled
+                    sender.sendMessage(Utils.chat("&cSetting homes in other worlds is not permitted"));
+                    return true;
+                }
+            }
         }
+
+        // check they haven't bypassed cap
         if (Utils.getHomeCount(homeOwner) >= plugin.getConfig().getInt("max-home-count")) {
             if (!sender.hasPermission("homes.bypasscap")) {
                 sender.sendMessage(Utils.chat(plugin.getConfig().getString("max-homecount-message")));
